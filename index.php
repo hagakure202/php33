@@ -2,31 +2,36 @@
 <html>
 <head></head>
 <body>
-<table border="2">
-	<tr>
+
 <?php
-$firma1 =[];
-$firma2 =[];
-for($j=0;$j<2;$j++){
-	for($i=0;$i<31;$i++){
-		$firma1[$j][$i] = rand(1,100);
-		$firma2[$j][$i] = rand(1,100);
-	}
+function buyBread($money=10,$discount=0){
+	$price = 10 ;
+	$price = 10 - (10*$discount/100);
+ 	return $money-$price;
 }
-var_dump($firma1,$firma2);
-$s1 =0; 
-$s2 =0 ; 
-for($j=0;$j<2;$j++){
-	for($i=0;$i<31;$i++){
-		$s1 = $s1 + $firma1[$j][$i];
-		$s2 = $s2 + $firma2[$j][$i];
-	}
+
+
+
+$x = buyBread();
+$x = buyBread(50);
+$x = buyBread('',3);
+$x = buyBread(50,3);
+echo $x;
+//----------------------------
+for ($i=0; $i<12; $i++){	
+	$a[$i] = rand (1,10);
+	$b[$i] = rand (1,10);
 }
-var_dump($s1,$s2,$s1+$s2);
+		
+	var_dump($a, $b);
+	$m=[];
+		for ($i=0; $i<12; $i++){
+			for ($j=0; $j<12; $j++){
+				 echo $a[$i][$j]**2*$b[$i][$j];
+			}
+		}
  ?>
-}
-</tr>
-</table>
+
 </body>
 </html>
 
